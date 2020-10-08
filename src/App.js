@@ -4,6 +4,11 @@ import React, { useState } from 'react';
  
  const App = (props) => {
    const [books] = useState(data);
+
+    if (books.length === 0){
+        return 'No books available';
+    }
+
    return (
        <div>
            {books.map(book => <Book key={book.id} book={book}/>)}
